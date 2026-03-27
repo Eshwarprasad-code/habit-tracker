@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monthly Habit Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=DM+Mono:wght@300;400;500&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Background layers -->
+  <div id="bg-image-layer"></div>
+  <div id="bg-overlay"></div>
+
+  <div class="app-shell">
+
+    <!-- ═══════════ HEADER ═══════════ -->
+    <header class="app-header">
+      <div class="header-row">
+        <div class="header-day">
+          <span class="pill-label">Today</span>
+          <span id="day-name" class="day-name"></span>
+        </div>
+        <div class="header-brand">
+          <span class="brand-dot">◆</span>
+          <span class="brand-text">Habit&nbsp;Tracker</span>
+        </div>
+        <div class="header-date">
+          <span class="pill-label">Date</span>
+          <span id="full-date" class="full-date"></span>
+        </div>
+      </div>
+      <div class="quote-strip">
+        <span class="quote-mark">"</span>
+        <p id="daily-quote" class="quote-text">Loading your daily quote…</p>
+        <span class="quote-mark">"</span>
+      </div>
+    </header>
+
+    <!-- ═══════════ CONTROLS ═══════════ -->
+    <div class="controls-bar">
+      <div class="month-badge">
+        <span id="month-year-label"></span>
+      </div>
+      <div class="add-task-group">
+        <input
+          type="text"
+          id="new-task-input"
+          class="task-input"
+          aria-label="Add new habit"
+          placeholder="Type a new habit…"
+          maxlength="60"
+          autocomplete="off"
+        />
+        <button id="add-task-btn" class="btn btn-accent" aria-label="Add habit">＋ Add Habit</button>
+      </div>
+      <div class="bg-controls">
+        <label for="bg-upload" class="btn btn-secondary">🖼 Background</label>
+        <input type="file" id="bg-upload" accept="image/*" hidden />
+      </div>
+    </div>
+
+    <!-- ═══════════ TABLE ═══════════ -->
+    <main class="table-section">
+      <div class="table-scroll">
+        <table id="habit-table">
+          <thead><tr id="table-header-row"></tr></thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+      <div id="empty-state" class="empty-state hidden">
+        <div class="empty-icon">📋</div>
+        <p class="empty-title">No habits tracked yet</p>
+        <p class="empty-sub">Add your first habit above to start the month strong.</p>
+      </div>
+    </main>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="app-footer">
+      <span>Track daily &nbsp;·&nbsp; Build momentum &nbsp;·&nbsp; Win the month</span>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
